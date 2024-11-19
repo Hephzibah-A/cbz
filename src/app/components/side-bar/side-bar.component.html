@@ -1,0 +1,36 @@
+<div class="sidebar">
+    <div class="logo-container">
+        <div class="logo">
+         <img src="../../assets/app_logo_white.png" class="logo-img" alt="logo">
+        </div>
+    </div>
+    <ul class="menu">
+        <li routerLink="content" routerLinkActive="active">
+            <a >
+                <i class="fa-solid fa-house"></i><span>Home </span>
+            </a>
+        </li>   
+        <li routerLink="post" routerLinkActive="active">
+            <a>
+                <i class="fa-brands fa-hive"></i><span>Posts</span>
+            </a>
+        </li>
+        <li routerLink="profile" routerLinkActive="active">
+            <a >
+                <i class="fa-regular fa-user"></i><span>Update Profile</span>
+            </a>
+        </li>
+        <li routerLink="events" routerLinkActive="active">
+            <a >
+                <i class="fa-solid fa-plus"></i><span>Add Events</span>
+            </a>
+        </li>
+        <li class="logout" (click)="logout()">
+            <a href="">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span>
+            </a>
+        </li>
+    </ul>
+    
+    
+</div>

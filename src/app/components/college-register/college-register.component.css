@@ -1,0 +1,211 @@
+/* General Form Styling */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+}
+
+body {
+    background-color: #f5f5f5;
+    /* Yellow background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* padding: 10px; */
+}
+
+form {
+    width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #ffffff;
+    /* White background */
+    box-shadow: 7px 10px 15px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for depth */
+    color: rgb(248, 202, 50);
+    /* Matching text color */
+    border: 1px solid #ffc70f;
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+}
+.form-1 img{
+    height: 100px;
+}
+.form-1 h2{
+    color: black;
+}
+.form-1{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+   
+}
+.form-2{
+    width: 30%;
+
+}
+form div {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 6px 0 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #555;
+    /* Darker text color for input */
+    background-color: #f9f9f9;
+    /* Light background for input */
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #999;
+    /* Lighter text color for placeholder */
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 14px 20px;
+    background-color: #fedc00;
+    /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+/* Additional Styling for Form Elements */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #007bff;
+    /* Blue border on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    /* Blue glow on focus */
+}
+
+/* File Input Styling */
+input[type="file"] {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+    /* Darker text color */
+    background-color: #f9f9f9;
+    /* Light background */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    background-color: #007bff;
+    /* Blue background */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+/* Uploaded Images Styling */
+.uploaded-image1{
+    width: 100px;
+    height: 100px;
+        display: block;
+        margin-top: 10px;
+        border-radius:100%;
+}
+.uploaded-image2{
+width: 200px;
+    height: 60px;
+    display: block;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+/* Loading Indicator Styling */
+.loading-indicator {
+    text-align: center;
+    color: #555;
+    font-size: 18px;
+}
+
+/* Submitted Message Styling */
+h1,
+h4 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+}
+.social-media{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.college-logo-show,
+.college-banner-show {
+    display: flex;
+    align-items: center;
+    gap: 10px;  
+    height: 100px;
+    /* Space between input and image */
+}
+
+.college-logo-show input[type="file"],
+.college-banner-show input[type="file"] {
+    flex-shrink: 0;
+}
+
+/* .loading-indicator{
+    position: absolute;
+
+} */

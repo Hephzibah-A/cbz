@@ -1,0 +1,105 @@
+<body>
+
+  <form *ngIf="!isSubmitted" [formGroup]="userData" (ngSubmit)="submit($event)" id="form">
+    <div class="form-1">
+      <div>
+        <div style="display: flex;align-items: center;">
+
+          <img src="../../assets/logo with border.png" alt="" style="height: 60px;">
+          <img src="../../assets/ConnectBeez (1).png" alt="" style="height: 20px;">
+        </div>
+        <h2>Create your College Profile</h2>
+        <p style="color: rgb(181, 181, 181); width: 80%;">Enter your college details below to create your college
+          account and get started</p>
+
+      </div>
+
+      <div>
+        <label for="collegeLogo">College Logo</label>
+        <div class="college-logo-show">
+
+          <input type="file" (change)="logo($event)">
+          <div *ngIf="logoImage">
+            <img [src]="logoImageSrc" alt="College Logo" class="uploaded-image1">
+          </div>
+        </div>
+      </div>
+      <div>
+        <label for="collegeBanner">College Banner</label>
+        <div class="college-banner-show">
+
+          <input type="file" (change)="banner($event)">
+          <div *ngIf="bannerImage">
+            <img [src]="bannerImageSrc" alt="College Banner" class="uploaded-image2">
+          </div>
+        </div>
+      </div>
+      <div>
+        <label for="collegeName">College Name</label>
+        <input type="text" formControlName="collegeName" placeholder="Enter your college name ">
+      </div>
+      <div>
+        <label for="collegeWebsite">College Website</label>
+        <input type="text" formControlName="collegeWebsite" placeholder="https://">
+      </div>
+
+
+
+    </div>
+
+    <div class="form-2">
+      <div class="social-media">
+        <div>
+          <label for="LinkedIn">LinkedIn</label>
+          <input type="text" formControlName="linkedin" placeholder="https://">
+        </div>
+        <div>
+          <label for="Facebook">Facebook</label>
+          <input type="text" formControlName="facebook" placeholder="https://">
+        </div>
+        <div>
+          <label for="Instagram">Instagram</label>
+          <input type="text" formControlName="instagram" placeholder="https://">
+        </div>
+      </div>
+      <div>
+        <label for="collegeAddress">College Address</label>
+        <input type="text" formControlName="collegeAddress">
+      </div>
+      <div>
+        <label for="collegeLocation">College Location</label>
+        <input type="text" formControlName="collegeLocation">
+      </div>
+      <div>
+        <label for="collegePhone">College Phone Number</label>
+        <input type="number" formControlName="collegePhone">
+      </div>
+      <div>
+        <label for="collegeAbout">College About</label>
+        <textarea cols="5" rows="10" formControlName="collegeAbout" maxlength="1000" placeholder="Maximum 1000 letters"
+          style="height: 100px;"></textarea>
+      </div>
+      <div>
+        <label for="collegeCategory">College Category</label>
+        <select (change)="selectCategory($event)"> <!-- Pass the event object directly -->
+          <option value="">Select Category</option>
+          <option *ngFor="let item of collegeCategory" [value]="item">{{ item }}</option>
+        </select>
+      </div>
+
+      <div>
+        <button type="submit" [disabled]="loading">Submit</button>
+      </div>
+    </div>
+  </form>
+
+  <div *ngIf="loading" class="loading-indicator">
+    Loading...
+  </div>
+
+  <div *ngIf="isSubmitted && !loading">
+    <h1>Thank you for responding</h1>
+    <h4>After 24hrs refresh this button</h4>
+    <button (click)="refreshPage()">Refresh</button>
+  </div>
+</body>

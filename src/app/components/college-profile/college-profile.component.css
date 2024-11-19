@@ -1,0 +1,122 @@
+/* Section Styling */
+section {
+    margin: 20px;
+    box-shadow: 0 0 10px #fedc00;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+/* All Post Styling */
+.all-post {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+/* Banner Styling */
+.banner {
+    height: 10rem;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Profile Details Styling */
+.profile-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 2rem;
+    width: 100%;
+}
+
+.profile-details h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-details h3 {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.profile-details p {
+    font-size: 1rem;
+    color: #444;
+}
+
+.profile-details img {
+    height: 8rem;
+    width: auto;
+    border-radius: 20px;
+    border: 2px solid #ddd;
+}
+
+/* Details Section Styling */
+.details {
+    margin-top: 2rem;
+}
+
+.details div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.details label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.details input[type="text"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.details p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+    padding: 0.5rem;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+/* Button Styling */
+.inactive,
+.active {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+}
+h1{
+    font-size: 30px;
+    border-bottom: 4px solid #fedc00;
+    width: 170px;
+}
+
+.inactive {
+    background-color: red;
+}
+
+.active {
+    background-color: green;
+}

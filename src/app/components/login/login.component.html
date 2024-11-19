@@ -1,0 +1,65 @@
+<body>
+    <div class="absolute">
+        <div class="absolute inset-0 justify-center">
+            <div class="bg-shape1 bg-yellow opacity-50 bg-blur"></div>
+            <div class="bg-shape2 bg-yellow-light opacity-50 bg-blur"></div>
+            <div class="bg-shape3 bg-yellow-dark opacity-50 bg-blur"></div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <form [formGroup]="login" (ngSubmit)="onSubmit()">
+            <div class="login-top">
+                <div class="logo">
+                    <img class="icon-logo" src="../../assets/logo with name.png" alt="" style="height: 60px;">
+                </div>
+                <h2>Welcome Back!</h2>
+                <br>
+                <p align="center">Glad to see you again <br>Login to your account below</p>
+            </div>
+            <div class="input-box">
+                <!-- <label for="email">Email</label> -->
+                <input type="email" formControlName="email" placeholder="Enter the email" required>
+                <small style="color: red;"
+                    *ngIf="login.controls['email'].errors?.['required'] && login.controls['email'].dirty">Your email is
+                    empty</small>
+                <small style="color: red;" *ngIf="login.controls['email'].errors?.['pattern']">Email should contain
+                    '&#64;' and .com</small>
+            </div>
+
+            <div class="input-box">
+                <!-- <label for="password">Password</label> -->
+                <input type="password" formControlName="password" placeholder="Enter the password" required>
+                <small style="color: red;"
+                    *ngIf="login.controls['password'].errors?.['required'] && login.controls['password'].dirty">Your
+                    password is empty</small>
+            </div>
+
+            <div class="forgot">
+                <a routerLink="/forgot-password">Forgot password?</a>
+            </div>
+
+            <div class="mb-3 form-group" *ngIf="this.errorMessage">
+                <span class="text-danger">
+                    <p [innerText]="this.errorMessage"></p>
+                </span>
+            </div>
+
+            <div class="text-center" *ngIf="this.loading">
+                <div class="loading loader" role="status">
+                </div>
+                <br>
+            </div>
+
+
+            <button type="submit" class="btn" (click)="submit=true" [disabled]="this.loading">Login</button>
+            <br>
+
+            <div class="register-link">
+                <p>Don't have an account? <a routerLink="/collegeUserRegister" class="register-btn">Register here</a>
+                </p>
+            </div>
+
+        </form>
+    </div>
+</body>

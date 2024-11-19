@@ -1,0 +1,20 @@
+<section>
+    <div>
+        <h1>All Poster</h1>
+    </div>
+    <div class="all-post" >
+        <div class="post" *ngFor="let item of collegeData">
+            <div>
+                <img src="https://www.ghcbapi.connectbeez.com/profile/assets/college_poster/{{item.poster}}" alt="">
+            </div>
+            <p>Event Name : <span>{{item.event_name}}</span></p>
+            <p>Department : <span>{{item.department}} </span></p>
+            <p>Posted On : <span>{{item.created_at}}</span></p>
+            <p>Coordinator Name : </p>
+            <p>Coordinator Number : </p>
+            <button *ngIf="!item.isactive" class="inactive">Not Active</button>
+            <button *ngIf="item.isactive" class="active">Active</button>
+        </div>
+       
+    </div>
+</section>

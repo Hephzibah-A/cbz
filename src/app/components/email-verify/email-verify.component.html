@@ -1,0 +1,48 @@
+<body>
+  <div class="absolute">
+    <div class="absolute inset-0 justify-center">
+      <div class="bg-shape1 bg-yellow opacity-50 bg-blur"></div>
+      <div class="bg-shape2 bg-yellow-light opacity-50 bg-blur"></div>
+      <div class="bg-shape3 bg-yellow-dark opacity-50 bg-blur"></div>
+    </div>
+  </div>
+  
+  <div class="main-container">
+    <div class="img-class">
+      <img src="../../assets/logo with border.png" alt="" style="height: 50px" />
+      <img src="../../assets/ConnectBeez (1).png" alt="" style="height: 30px" />
+    </div>
+  
+    <h1>Verify Your Email address</h1>
+    <!-- <img src="https://lottie.host/27d008b9-339a-4f5e-bce5-1322ec1cef01/Sd1Z5WM9iZ.json" alt="" /> -->
+    <iframe src="https://lottie.host/embed/27d008b9-339a-4f5e-bce5-1322ec1cef01/Sd1Z5WM9iZ.json"></iframe>
+    <p style="width: 50%; color: gray">
+      Check your email connectbeezofficial&#64;gmail.com & click the link to
+      activate your account. If not in mail, kindly check in spam.
+    </p>
+  
+    <div class="email-verify-box">
+      <p *ngIf="!isEmailVerified">
+        A verification link has been sent to your email. Please check your inbox and click the link to verify your email.
+      </p>
+      <p *ngIf="isEmailVerified" class="verified-message">
+        Your email is successfully verified! You can now proceed.
+      </p>
+  
+      <button *ngIf="!isEmailVerified" (click)="sendVerificationEmail()">
+        Resend Verification Email
+      </button>
+  
+      <button *ngIf="isEmailVerified" (click)="updateApiAndNavigate()">
+        Proceed to Waiting for Approval
+      </button>
+      
+  
+      <p class="info">If you didn't receive the email, please check your spam folder.</p>
+  
+      <!-- <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div> -->
+    </div>
+  </div>
+</body>

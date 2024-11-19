@@ -1,0 +1,71 @@
+<form action="" [formGroup]="events" (ngSubmit)="submit($event)">
+    <div class="event-top">
+        <h1>Create College Event</h1>
+        <p style="color: rgb(176, 176, 176);">Enter your college Events details below to create a invitation to all the students</p>
+    </div>
+    <section>
+
+        <div>
+            <div>
+                <label for="">Events name</label>
+                <input type="text" formControlName="eventName" placeholder="Enter Event name">
+            </div>
+    
+            <div>
+                <label for="">Department</label>
+                <input type="text" formControlName="department" placeholder="Enter your department">
+            </div>
+    
+            <div>
+                <label for="">Events category</label>
+                
+                <select #Events (change)="selectEvent(Events.value)">
+                    <option value="">Select event</option>
+                    <option *ngFor="let item of category" value="{{item.category}}">{{item.category}}</option>
+                </select>
+            </div>
+    
+            <div>
+                <label for="">Add Event Poster</label>
+                <input type="file" name="" id="" (change)="onFileSelected($event)">
+            </div>
+            <div>
+                <label for="">Register link</label>
+                <input type="text" name="" id="" formControlName="registerLink" placeholder="https://">
+            </div>
+            <div>
+                <label for="">End date</label>
+                <input type="date" name="" id="" formControlName="date">
+            </div>
+        </div>
+    
+        <div>
+            
+    
+            <div>
+                <label for="">Description</label>
+                <textarea name="" id="" cols="30" rows="10" formControlName="description" placeholder="Enter the Description"></textarea>
+            </div>
+    
+            <div>
+                <label for="">Corrdinator Name</label>
+                <input type="text" formControlName="corrdinatorName" placeholder="Enter Corrdinator name">
+            </div>
+    
+            <div>
+                <label for="">Corrdinator number</label>
+                <input type="text" name="" id="" formControlName="corrdinatorNumber" placeholder="Enter Corrdinator Number">
+            </div>
+    
+            
+            <div><button type="submit">Post Event</button></div>
+    
+        </div>
+        <div *ngIf="imageSrc" class="event-img">
+            <img [src]="imageSrc" alt="Event Poster" style="max-width: 300px; max-height: 300px; margin-top: 10px;">
+        </div>
+    </section>
+    
+
+
+</form>

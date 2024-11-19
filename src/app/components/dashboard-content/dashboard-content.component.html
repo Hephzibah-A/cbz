@@ -1,0 +1,97 @@
+<div class="main--content">
+    <div class="header--wrapper">
+        <div class="header--title">
+            <span>Dashboard</span>
+            <h2>Welcome {{name}} !!!</h2>
+        </div>
+        <div class="user--info"></div>
+        <div class="user--image">
+            <!-- Example of accessing college_logo safely -->
+<!-- <img *ngIf="collegeData?.college_logo" [src]="collegeData.college_logo" alt="College Logo"> -->
+
+        <img src="https://ghcbapi.connectbeez.com/profile/assets/college_logo_banner/{{college.college_logo}}" alt="College Logo">
+        
+        </div>
+    </div>
+    <!--Card container-->
+    <div class="card--container">
+        <h1 class="main--title">Your Insights</h1>
+        <div class="card--wrapper">
+            <div class="data--card v-light-green">
+                <div class="card--header">
+                    <div class="data">
+                        <span class="title">
+                            Active Posts
+                        </span><span class="data-value">{{isactivePoster}}</span>
+                    </div>
+                    <i class="fa-regular fa-circle-check icon green light-green"></i>
+                </div>
+                <span class="card--detail">No of Posts that are active</span>
+            </div>
+            <!--Next card-->
+            <div class="data--card v-light-red">
+                <div class="card--header">
+                    <div class="data">
+                        <span class="title">
+                            Non Active Posts
+                        </span><span class="data-value">{{inactivePoster}}</span>
+                    </div>
+                    <i class="fa-regular fa-circle-xmark icon red light-red"></i>
+                </div>
+                <span class="card--detail">No of Posts that are not active</span>
+            </div>
+            <!--Next card-->
+            <div class="data--card v-light-blue">
+                <div class="card--header">
+                    <div class="data">
+                        <span class="title">
+                            Total Posts
+                        </span><span class="data-value">{{totalPoster}}</span>
+                    </div>
+                    <i class="fa-regular fa-rectangle-list icon blue light-blue"></i>
+                </div>
+                <span class="card--detail">No of Posts that you have posted so far </span>
+            </div>
+        </div>
+    </div>
+    <div class="tabular--wrapper">
+  <h3 class="main--title">Recent Posts</h3>
+  <div class="table-container" *ngIf="activePoster.length > 0; else noActivePosts">
+    <table>
+      <thead>
+        <tr>
+          <th>S.no</th>
+          <th>Post title</th>
+          <th>Posted Date</th>
+          <th>Ending Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let poster of activePoster; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ poster.event_name }}</td>
+          <td>{{ poster.created_date }}</td> <!-- Displaying the created date -->
+          <td>{{ poster.ended_date }}</td> <!-- Displaying the ending date -->
+          <td>Active</td>
+          <td><button class="btn btn-warning btnn">View</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #noActivePosts>
+    <p>No active posters available.</p>
+  </ng-template>
+</div>
+
+
+</div>
+
+
+
+
+<!-- <h1>Welcome to Your Dashboard</h1>
+
+<!-- <h5>{{user.email}}</h5>
+<h3>{{user.isEmailVerified}}</h3>  -->

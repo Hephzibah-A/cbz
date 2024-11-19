@@ -1,0 +1,116 @@
+<body>
+  <div class="absolute">
+    <div class="absolute inset-0 justify-center">
+      <div class="bg-shape1 bg-yellow opacity-50 bg-blur"></div>
+      <div class="bg-shape2 bg-yellow-light opacity-50 bg-blur"></div>
+      <div class="bg-shape3 bg-yellow-dark opacity-50 bg-blur"></div>
+    </div>
+  </div>
+
+  <div class="register">
+    <div class="register-top">
+      <div style="display: flex;justify-content: center;align-items: center; gap: 10px;">
+        <img src="../../assets/logo with border.png" alt="" style="height: 60px;">
+        <img src="../../assets/ConnectBeez (1).png" alt="" style="height: 30px;">
+      </div>
+      <div style="text-align: center;padding-top:20px;">
+        <h1 style="font-weight: bold;">Register Your Details</h1>
+        <p style="color: gray;">Register your detail given below to create your admin profile for college</p>
+      </div>
+    </div>
+
+    <form action="" [formGroup]="userData" (ngSubmit)="submit($event)">
+
+      <div class="left-column">
+
+        <div>
+          <label for="">College Name</label>
+          <input type="text" placeholder="Enter College name" formControlName="collegeName">
+        </div>
+        <div>
+          <label for=""> Name</label>
+          <input type="text" placeholder="Enter your name" formControlName="adminName" />
+        </div>
+
+        <div>
+          <label for="">Email</label>
+          <input type="email" formControlName="adminMail" placeholder="Enter your email" />
+        </div>
+        <div>
+          <label for="">Password</label>
+          <input type="password" formControlName="adminPassword" placeholder="Enter your password" />
+
+        </div>
+        <div>
+          <label for="">Designation</label>
+          <input type="text" placeholder="designation" formControlName="designation"
+            placeholder="Enter your designation" />
+        </div>
+      </div>
+
+      <div>
+
+        <div>
+          <label for="">Phone number</label>
+          <input type="tel" formControlName="adminPhone" placeholder="Enter your phone number" />
+        </div>
+
+        <div>
+          <label for="file">Add your ID Card</label>
+          <div class="file-upload-show">
+            <input type="file" formControlName="file" (change)="onFileSelected($event)" />
+            <div *ngIf="uploadedFileSrc">
+              <img [src]="uploadedFileSrc" alt="Uploaded File" class="uploaded-image2">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="location">
+          <div>
+            <label for="">Country</label>
+            <select (change)="onCountryChange($event)">
+              <option value="" disabled selected>Country</option>
+              <option *ngFor="let country of countries" [value]="country.isoCode">{{ country.name }}</option>
+            </select>
+
+          </div>
+
+          <div>
+            <label for="">State</label>
+            <select (change)="onStateChange($event)" *ngIf="states.length > 0">
+              <option value="" disabled selected>State</option>
+              <option *ngFor="let state of states" [value]="state.isoCode">{{ state.name }}</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="">City</label>
+            <select *ngIf="cities.length > 0" (change)="onCityChange($event)">
+              <option value="" disabled selected>City</option>
+              <option *ngFor="let city of cities" [value]="city.name">{{ city.name }}</option>
+              <!-- Set city name as value -->
+            </select>
+          </div>
+
+
+        </div>
+
+        <div class="checkbox-container">
+          <input type="checkbox" id="termsCheckbox">
+          <label for="termsCheckbox">
+            I agree to the <a href="">Terms and Conditions</a> and <a href="">Privacy Policy</a>
+          </label>
+        </div>
+
+        <div>
+          <a><button type="submit">Submit</button></a>
+        </div>
+
+
+      </div>
+
+    </form>
+
+  </div>
+</body>

@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main--content {
+    position: relative;
+    background: #f3f1f1;
+    width: 100%;
+
+    /* padding: 1rem; */
+    border-radius: 10px;
+
+}
+
+.header--wrapper img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50px;
+
+}
+
+.header--wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    padding: 10px;
+}
+
+.header--title {
+    color: #ffc70f;
+    padding: 10px;
+}
+
+.user--info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .user--image {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 4px 12px;
+
+    }
+
+}
+
+.card--container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.card--wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.main--title {
+    color: #ffc70f;
+    padding-bottom: 10px;
+    font-size: 25px;
+}
+
+.data--card {
+    border-radius: 10px;
+    padding: 1.2rem;
+    width: 344px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.5s ease-in-out;
+}
+
+.data--card:hover {
+    transform: translateY(-5px);
+}
+
+.card--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 200;
+}
+
+.data-value {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.icon {
+
+    padding: 1rem;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 3.5rem;
+
+}
+
+.card--detail {
+    font-size: 18px;
+    color: #221d1d77;
+    /* letter-spacing: 1px; */
+}
+
+/* color css foe cards */
+.light-green {
+    background-color: rgba(155, 207, 83, 0.5);
+}
+
+.v-light-green {
+    background-color: rgba(155, 207, 83, 0.2);
+}
+
+.green {
+    color: #416D19;
+}
+
+.light-red {
+    background: rgba(231, 41, 41, 0.5);
+}
+
+.v-light-red {
+    background: rgba(231, 41, 41, 0.2);
+}
+
+.red {
+    color: #E72929;
+}
+
+.light-blue {
+    background:
+        rgba(56, 122, 223, 0.5);
+}
+
+.v-light-blue {
+    background:
+        rgba(56, 122, 223, 0.2);
+}
+
+.blue {
+    color: #333A73;
+}
+
+/* table */
+.tabular--wrapper {
+    background: #fff;
+    margin-top: 1rem;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.table-container {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: linear-gradient(220.55deg, #FFF500 0%, #ffc70f 100%);
+    color: #59310F;
+
+}
+
+th {
+    padding: 15px;
+    text-align: left;
+}
+
+tbody {
+    background: #f2f2f2;
+}
+
+td {
+    padding: 15px;
+    font-size: 14px;
+    color: #59310F;
+}
+
+tr:nth-child(even) {
+    background: #fff;
+}
+
+/* General button styling */
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    outline: none;
+    border: none;
+
+}
+
+/* Specific styling for warning buttons */
+.btn-warning {
+    background-color: #ffc107;
+    color: white;
+}
+
+/* Additional styling for btnn class */
+.btnn {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+}
+
+/* Hover effect */
+.btn:hover {
+    background-color: #e0a800;
+    transform: translateY(-2px);
+}
+
+/* Active effect */
+.btn:active {
+    background-color: #d39e00;
+    transform: translateY(1px);
+}
+
+/* Focus effect */
+.btn:focus {
+    border: 2px solid #ffc107;
+}
